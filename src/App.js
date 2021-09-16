@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route } from "react-router-dom";
+import NewsPage from "./pages/NewsPage";
 
 function App() {
+  // const [data, setData] = useState(null);
+  // const onClick = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://newsapi.org/v2/top-headlines?country=kr&category=business&apiKey=36e9e89184ad4ea68bba14f8c4ccda0e"
+  //     );
+  //     setData(response.data);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+
+  // const [category, setCategory] = useState("all");
+  // const onSelect = useCallback((category) => setCategory(category), []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Route path='/:category?' component={NewsPage} />
+    // <>
+    //   <Categories category={category} onSelect={onSelect} />
+    //   <NewsList category={category} />
+    // </>
+    // <NewsList />
+    // <div className='App'>
+    //   <div>
+    //     <button onClick={onClick}>view news</button>
+    //   </div>
+    //   {data && <textarea rows={7} value={JSON.stringify(data, null, 2)} />}
+    // </div>
   );
 }
 
